@@ -5,7 +5,7 @@
 2. [Whitespace](#whitespace)
 3. [Commas](#commas)
 4. [Naming conventions](#naming-conventions)
-5. [Classes](#Classes)
+5. [Classes](#classes)
 
 ### Tabs
 - [1.1](#1.1) Use soft spaces instead of tabs.
