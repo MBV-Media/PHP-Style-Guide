@@ -9,7 +9,7 @@
 6. [Accessors](#accessors)
 7. [Strings](#strings)
 8. [Functions](#functions)
-9. [Comparison Operators & Equality](comparison-operators--equality)
+9. [Comparison Operators & Equality](#comparison-operators--equality)
 10. [Blocks](#block)
 11. [Comments](#comments)
 
