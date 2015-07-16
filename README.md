@@ -172,6 +172,10 @@
   $result = 42;
 ```
 
+- [4.5](#4.5) Place only one class in one file and name the file like the class. Example: `Person.php` contains a class named `Person`.
+
+- [4.6](#4.6) When file contains no class, use dashes `-` to seperate words.
+
 **[⬆ back to top](#table-of-contents)**
 
 
