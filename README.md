@@ -1,5 +1,7 @@
 # PHP Style Guide
 
+PHP Style Guide to maintain readable code, that looks like it was written by one person, even if a whole team was working on it.
+
 ## Table of contents
 1. [Tabs](#tabs)
 2. [Whitespace](#whitespace)
