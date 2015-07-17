@@ -39,12 +39,13 @@
       public function __contruct() {}
 
       /**
-       * Walks the line.
+       * Walks the line for a given amount of meters.
        *
+       * @param int $meters Meters to walk
        * @return void
        */
-      public function walkTheLine() {
-          echo 'I am walking the line.';
+      public function walkTheLine( $meters ) {
+          echo 'I am walking the line for ' . $meters . 'm.';
       }
   }
   
