@@ -45,7 +45,7 @@
        * @return void
        */
       public function walkTheLine( $meters ) {
-          echo 'I am walking the line for ' . $meters . 'm.';
+          echo sprintf( 'I am walking the line for %dm.', $meters );
       }
   }
   
@@ -76,7 +76,7 @@
        * @return void
        */
       public function walkTheLine( $meters ) {
-          echo 'I am walking the line for ' . $meters . 'm.';
+          echo sprintf( 'I am walking the line for %dm.', $meters );
       }
   }
   
@@ -376,7 +376,7 @@
        * @return void
        */
       public function walkTheLine( $meters ) {
-          echo 'I am walking the line for ' . $meters . 'm.';
+          echo sprintf( 'I am walking the line for %dm.', $meters );
       }
   }
 ```
