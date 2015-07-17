@@ -148,7 +148,7 @@
 
 
 ### Naming conventions
-- [4.1](#4.1) Use camelCase when naming objects, functions, variables, and instances.
+- [4.1](#4.1) Use camelCase when naming functions and variables.
 ```php
   $firstName = 'John';
   function createPerson() {}
