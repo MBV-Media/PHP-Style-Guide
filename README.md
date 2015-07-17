@@ -299,7 +299,7 @@
 
 - [7.2](#7.2) Strings longer than 100 characters should be written across multiple lines using string concatenation.
 ```php
-  $person->description = 'I'm a very long text and need to be written across multiple lines using string ' .
+  $person->description = 'I am a very long text and need to be written across multiple lines using string ' .
       'concatenation.';
 ```
 
