@@ -41,6 +41,7 @@
       /**
        * Walks the line for a given amount of meters.
        *
+       * @since 1.0
        * @param int $meters Meters to walk
        * @return void
        */
@@ -72,6 +73,7 @@
       /**
        * Walks the line for a given amount of meters.
        *
+       * @since 1.0
        * @param int $meters Meters to walk
        * @return void
        */
@@ -133,7 +135,7 @@
   );
 ```
 
-- [3.2](#3.2) Use additional trailing commas in arrays.
+- [3.2](#3.2) Use additional trailing commas for the last elements in arrays.
 ```php
   $numbers = array(
       1,
@@ -186,10 +188,10 @@
   $person->walkTheLine();
 ```
 
-- [5.2](#5.2) Use subscript notation `[]` when accessing properties with a variable.
+- [5.2](#5.2) Use arrow notation and braces `{}` when accessing properties with a variable.
 ```php
   $propertyName = 'origin';
-  $origin = $person[$propertyName];
+  $origin = $person->{$propertyName};
 ```
 
 - [5.3](#5.3) Always write out property and method visibility.
@@ -226,6 +228,7 @@
       /**
        * Setter method for $name property
        *
+       * @since 1.0
        * @param string $name Name to assign
        * @return void
        */
@@ -241,7 +244,7 @@
   if ( $person->isAlive() ) {}
 ```
 
-- [6.4](#6.4) It's okay to create `get()` and `set()` functions, but be consistent.
+- [6.4](#6.4) It's okay to create magic getter `__get` and setter `__set` methods
 ```php
   class Person {
       /**
@@ -252,30 +255,38 @@
       public function __contruct() {}
 
       /**
-       * Setter method for the property passed in $key parameter.
+       * Magic getter method for the property passed in $property parameter.
        *
-       * @param string $key Property that should be assigned
-       * @param mixed $val Value to assign
-       * @return void
+       * @since 1.0
+       * @param string $property Property to get
+       * @return mixed
        */
-      public function set( $key, $val ) {
-          $this[$key] = $val;
+      public function __get( $property ) {
+          if ( property_exists( $this, $property ) ) {
+              return $this->{$property};
+          }
       }
 
       /**
-       * Getter method for the property passed in $key parameter.
+       * Magic setter method for the property passed in $property parameter.
        *
-       * @param string $key Property to get
-       * @return mixed
+       * @since 1.0
+       * @param string $property Property that should be assigned
+       * @param mixed $value Value to assign
+       * @return void
        */
-      public function get( $key ) {
-          return $this[$key];
+      public function __set( $property, $value ) {
+          if ( property_exists( $this, $property ) ) {
+              $this->{$property} = $value;
+          }
       }
   }
   
   $person = new Person();
   $person->set( 'name', 'John Doe' );
 ```
+
+- [6.5](#6.5) **Note:** Magic getter and setter methods are **slower** than normal getter and setter methods. Also, there are problems with phpDoc.
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -286,7 +297,7 @@
   $person->name = 'John Doe';
 ```
 
-- [7.2](#7.2) Strings longer than 110 characters should be written across multiple lines using string concatenation.
+- [7.2](#7.2) Strings longer than 100 characters should be written across multiple lines using string concatenation.
 ```php
   $person->description = 'I'm a very long text and need to be written across multiple lines using string ' .
       'concatenation.';
@@ -320,17 +331,6 @@
 
 ### Comparison Operators & Equality
 - [9.1](#9.1) Use `===` and `!==` over `==` and `!=`.
-
-- [9.2](#9.2) Use shortcuts.
-```php
-  // Use
-  if ( $person->cars ) {}
-  
-  // Rather then
-  if ( !empty( $person->cars ) ) {}
-```
-
-- **Note:** For more information see [Type Comparisons](http://php.net/manual/en/types.comparisons.php).
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -366,12 +366,23 @@
 ### Comments
 - [11.1](#11.1) Use `/** ... */` for multi-line comments. Include a description, specify types and values for all parameters and return values.
 ```php
+  /**
+   * The class representing a person.
+   *
+   * Represents a person and all things one can do.
+   *
+   * @since 1.0
+   * @package MarvelUniverse
+   * @subpackage MarvelUniverse/Person
+   * @author R4c00n <m.kempf@rto.de>
+   */
   class Person {
       public function __contruct() {}
 
       /**
        * Walks the line for a given amount of meters.
        *
+       * @since 1.0
        * @param int $meters Meters to walk
        * @return void
        */
@@ -379,6 +390,18 @@
           echo sprintf( 'I am walking the line for %dm.', $meters );
       }
   }
+```
+
+- [11.2](#11.2) Add phpDocs to your file.
+```php
+  /**
+   * Super hero functionality of the MarvelUniverse.
+   *
+   * @since 1.0
+   * @package MarvelUniverse
+   * @subpackage MarvelUniverse/SuperHero
+   * @author R4c00n <m.kempf@rto.de>
+   */
 ```
 
 - [11.2](#11.2) **Note:** For more information see [phpDocumentor](http://www.phpdoc.org/docs/latest/index.html).
