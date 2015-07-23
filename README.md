@@ -1,5 +1,7 @@
 # PHP Style Guide
 
+PHP Style Guide to maintain readable code, that looks like it was written by one person, even if a whole team was working on it.
+
 ## Table of contents
 1. [Tabs](#tabs)
 2. [Whitespace](#whitespace)
@@ -148,7 +150,7 @@
 
 
 ### Naming conventions
-- [4.1](#4.1) Use camelCase when naming objects, functions, variables, and instances.
+- [4.1](#4.1) Use camelCase when naming functions and variables.
 ```php
   $firstName = 'John';
   function createPerson() {}
@@ -299,7 +301,7 @@
 
 - [7.2](#7.2) Strings, whose length exceeds the maximum amount of characters per line and would extend beyond the Right Margin (100 characters), should be split up and written across multiple lines using string concatenation.
 ```php
-  $person->description = 'I'm a very long text and need to be written across multiple lines using string ' .
+  $person->description = 'I am a very long text and need to be written across multiple lines using string ' .
       'concatenation.';
 ```
 
