@@ -35,7 +35,7 @@ PHP Style Guide to maintain readable code, that looks like it was written by one
   if ( person->name === 'John Doe' ) {}
 ```
 
-- [2.3](#2.3) Place no space before the argument list in function calls and declarations.
+- [2.3](#2.3) Place no space in between the function name and the opening parenthesis.
 ```php
   class Person {
       public function __contruct() {}
@@ -53,7 +53,7 @@ PHP Style Guide to maintain readable code, that looks like it was written by one
   }
   
   $person = new Person();
-  $person->walkTheLine();
+  $person->walkTheLine( 500 );
 ```
 
 - [2.4](#2.4) Set off operators with spaces.
