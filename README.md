@@ -297,7 +297,7 @@
   $person->name = 'John Doe';
 ```
 
-- [7.2](#7.2) Strings longer than 100 characters should be written across multiple lines using string concatenation.
+- [7.2](#7.2) Strings, whose length exceeds the maximum amount of characters per line and would extend beyond the Right Margin (100 characters), should be split up and written across multiple lines using string concatenation.
 ```php
   $person->description = 'I'm a very long text and need to be written across multiple lines using string ' .
       'concatenation.';
